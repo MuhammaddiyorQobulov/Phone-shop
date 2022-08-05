@@ -161,5 +161,4 @@ const products = [
     countOfProduc: 0,
   },
 ];
-
 export default products;
