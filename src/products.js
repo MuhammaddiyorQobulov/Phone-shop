@@ -124,7 +124,7 @@ const products = [
     id: faker.random.numeric(5),
     name: "Samsung Galaxy S21",
     model: "Lilac Purple",
-    imgURL: require("./assets/images/samsung-s21.png"),
+    imgURL: require("./assets/images/samsung-S21.png"),
     rate: faker.datatype.number({ max: 10 }) / 2,
     price: faker.commerce.price(),
     description: faker.random.words(200),
