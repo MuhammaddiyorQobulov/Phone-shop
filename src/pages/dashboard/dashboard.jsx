@@ -12,7 +12,7 @@ export default class Dashboard extends Component {
         <div className="main-wrapper">Bu yerda products keladi</div>
         <div className="right-sidebar">Bu yerda bag companenta keladi</div>
       </div>
-      // Componentlar shu divlar ichida yoziladi !!!
+      // Componentlar shu divlar icida yoziladi !!!!
     );
   }
 }
