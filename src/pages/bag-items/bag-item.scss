@@ -5,6 +5,7 @@
   &__starts {
     display: flex;
     gap: 9.5px;
+    color: var(--accent);
   }
   &__title {
     font-style: normal;
@@ -31,7 +32,13 @@
     background: #fff;
     border-radius: 21px;
     display: flex;
+    &_img {
+      img {
+        height: 254px;
+      }
+    }
     &__description {
+      width: 78%;
       h1 {
         font-style: normal;
         font-weight: 400;

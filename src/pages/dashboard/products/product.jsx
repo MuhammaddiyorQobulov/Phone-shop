@@ -1,17 +1,10 @@
 import React, { Component } from "react";
+import Button from "../../../components/button/button";
 import { bagAdd } from "../../../assets/icons";
+import "./product.scss";
 class Product extends Component {
   render() {
-    const {
-      id,
-      name,
-      model,
-      imgURL,
-      rate,
-      price,
-      description,
-      countOfProducts,
-    } = this.props.product;
+    const { name, model, imgURL, price } = this.props.product;
     return (
       <div className="product">
         <img src={imgURL} alt="" />
@@ -19,9 +12,8 @@ class Product extends Component {
         <p>{model}</p>
         <div className="price">
           <b>$ {price}</b>
-          <button>{bagAdd}</button>
+          <Button icon={bagAdd} />
         </div>
-        {console.log(this.props.product.name)}
       </div>
     );
   }

@@ -20,18 +20,32 @@ body {
   grid-template-columns: 130px auto 345px;
 
   .left-sidebar {
-    background-color: rgb(207, 214, 176);
+    background-color: var(--bg-primary);
     padding: 16px 34px 16px 16px;
   }
 
   .main-wrapper {
-    background-color: rgb(159, 196, 197);
+    background-color: var(--bg-primary);
     padding: 24px;
     overflow-y: scroll;
+    scrollbar-color: red;
+    scrollbar-gutter: stable;
+    margin-right: 15px;
+
+    &::-webkit-scrollbar {
+      width: 8px;
+      background-color: white;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--bg-primary);
+      border-radius: 20px;
+      border: 3px solid gray;
+    }
   }
 
   .right-sidebar {
-    background: rgb(182, 133, 133);
+    background: var(--bg-primary);
     color: #fff;
     margin: 50px 36px 50px 0;
     overflow-y: scroll;

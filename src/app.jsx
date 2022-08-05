@@ -1,9 +1,8 @@
 import { Component } from "react";
 import Dashboard from "./pages/dashboard/dashboard";
 import Login from "./pages/login/login";
-import Products from "./pages/dashboard/products/products";
 import BagItems from "./pages/bag-items/bag-items";
-import Button from "./components/button/button";
+
 class App extends Component {
   state = {};
 
@@ -11,8 +10,6 @@ class App extends Component {
     return (
       <div className="App">
         <BagItems />
-        <Button title="Samandar" logo="++" />
-        <Products />
         <Login />
         <Dashboard />
       </div>
