@@ -1,0 +1,14 @@
+.side-bar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 8px;
+    gap: 32px;
+    padding: 8px;
+    height: calc(100vh - 50px);
+    
+    .logout-icon{
+        margin-top: auto;
+    }
+}
