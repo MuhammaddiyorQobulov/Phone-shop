@@ -1,4 +1,5 @@
 import { Component } from "react";
+import Dashboard from "./pages/dashboard/dashboard";
 import products from "./products";
 
 class App extends Component {
@@ -6,7 +7,9 @@ class App extends Component {
 
   render() {
     console.log("products = ", products);
-    return <div className='App'>Apple Watch</div>;
+    return <>
+      <Dashboard/>
+    </>
   }
 }
 

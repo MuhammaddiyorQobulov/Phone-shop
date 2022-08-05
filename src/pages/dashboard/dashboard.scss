@@ -1,0 +1,19 @@
+.dashboard{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 130px auto 345px;
+
+    .left-sidebar{
+        background-color: rebeccapurple;
+    }
+
+    .main-wrapper{
+        background-color: blue;
+    }
+
+    .right-sidebar{
+        background: black;
+        color: #fff;
+    }
+}
