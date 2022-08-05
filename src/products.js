@@ -130,6 +130,35 @@ const products = [
     description: faker.random.words(200),
     countOfProduc: 0,
   },
+  {
+    id: faker.random.numeric(5),
+    name: "Dell XPS 13",
+    model: "White",
+    imgURL: require("./assets/images/Dell-XPS-13-White.png"),
+    rate: faker.datatype.number({ max: 10 }) / 2,
+    price: faker.commerce.price(),
+    description: faker.random.words(200),
+    countOfProduc: 0,
+  },
+  {
+    id: faker.random.numeric(5),
+    name: "Dell XPS 15",
+    model: "Light Gray",
+    imgURL: require("./assets/images/Dell-XPS-15-Black.png"),
+    rate: faker.datatype.number({ max: 10 }) / 2,
+    price: faker.commerce.price(),
+    description: faker.random.words(200),
+    countOfProduc: 0,
+  },
+  {
+    id: faker.random.numeric(5),
+    name: "Dell XPS 13",
+    model: "Midnight Gray",
+    imgURL: require("./assets/images/Dell-XPS-13-Black.png"),
+    rate: faker.datatype.number({ max: 10 }) / 2,
+    price: faker.commerce.price(),
+    description: faker.random.words(200),
+    countOfProduc: 0,
+  },
 ];
-
 export default products;

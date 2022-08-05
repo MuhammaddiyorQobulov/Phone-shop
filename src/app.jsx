@@ -1,15 +1,18 @@
 import { Component } from "react";
 import Dashboard from "./pages/dashboard/dashboard";
-import products from "./products";
-
+import Login from "./pages/login/login";
+import Products from "./pages/dashboard/products/products";
 class App extends Component {
   state = {};
 
   render() {
-    console.log("products = ", products);
-    return <>
-      <Dashboard/>
-    </>
+    return (
+      <div className="App">
+        <Products />
+        <Login />
+        <Dashboard />
+      </div>
+    );
   }
 }
 
