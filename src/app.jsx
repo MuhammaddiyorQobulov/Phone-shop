@@ -1,4 +1,5 @@
 import { Component } from "react";
+import Login from "./pages/login/login";
 import products from "./products";
 
 class App extends Component {
@@ -6,7 +7,11 @@ class App extends Component {
 
   render() {
     console.log("products = ", products);
-    return <div className='App'>Apple Watch</div>;
+    return (
+      <div className="App">
+        <Login />
+      </div>
+    );
   }
 }
 
