@@ -33,14 +33,12 @@ body {
     margin-right: 15px;
 
     &::-webkit-scrollbar {
-      width: 8px;
-      background-color: white;
+      width: 4px;
     }
 
     &::-webkit-scrollbar-thumb {
-      background-color: var(--bg-primary);
+      background-color: gray;
       border-radius: 20px;
-      border: 3px solid gray;
     }
   }
 
