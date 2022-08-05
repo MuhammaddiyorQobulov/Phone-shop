@@ -13,25 +13,29 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.dashboard{
+.dashboard {
   width: 100%;
   height: 100vh;
   display: grid;
   grid-template-columns: 130px auto 345px;
 
-  .left-sidebar{
-      background-color: rgb(207, 214, 176);
-      padding: 16px 34px 16px 16px;
+  .left-sidebar {
+    background-color: rgb(207, 214, 176);
+    padding: 16px 34px 16px 16px;
   }
 
-  .main-wrapper{
-      background-color: rgb(159, 196, 197);
-      padding: 24px;
+  .main-wrapper {
+    background-color: rgb(159, 196, 197);
+    padding: 24px;
+    overflow-y: scroll;
   }
 
-  .right-sidebar{
-      background: rgb(182, 133, 133);
-      color: #fff;
-      padding: 72px 28px 0;
+  .right-sidebar {
+    background: rgb(182, 133, 133);
+    color: #fff;
+    margin: 50px 36px 50px 0;
+    overflow-y: scroll;
+    border-left: 4px solid rgba(26, 31, 22, 0.5);
+    padding: 36px;
   }
 }
