@@ -4,7 +4,7 @@ import Bag from "../../components/bag/bag";
 import products from "../../products";
 import { bagAdd } from "../../assets/icons";
 import "./view.scss";
-
+import Button from "../../components/button/button";
 export default class View extends Component {
   render() {
     const { onPageChange, onLogOut } = this.props;
@@ -14,7 +14,9 @@ export default class View extends Component {
           <SideBar onLogOut={onLogOut} onPageChange={onPageChange} />
         </div>
         <div className="main-wrapper">
-          <button className="backBtn" onClick={()=>onPageChange("dashboard")}>&lt; Back</button>
+          <button className="backBtn" onClick={() => onPageChange("dashboard")}>
+            &lt; Back
+          </button>
           <div className="hero">
             <div className="hero-left">
               <ul className="img-list">
@@ -41,9 +43,7 @@ export default class View extends Component {
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa
                 asperiores assumenda aliquam, commodi ab necessitatibus.
               </p>
-              <button className="addBtn">
-                {bagAdd} <p>Add to Bag</p>
-              </button>
+              <Button icon={bagAdd} title="Add to Bag" />
             </div>
           </div>
           <span className="horizontLine"></span>

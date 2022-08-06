@@ -6,10 +6,11 @@ import "./checkout.scss";
 
 class Checkout extends Component {
   render() {
+    const { onLogOut, onPageChange } = this.props;
     return (
       <div className="dashboard">
         <div className="left-sidebar">
-          <SideBar />
+          <SideBar onLogOut={onLogOut} onPageChange={onPageChange} />
         </div>
         <div className="main-wrapper">
           <div className="checkout">
