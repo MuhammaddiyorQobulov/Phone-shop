@@ -3,9 +3,10 @@ import Dashboard from "./pages/dashboard/dashboard";
 import Login from "./pages/login/login";
 import BagItems from "./pages/bag-items/bag-items";
 import products from "./products";
+
 class App extends Component {
   state = {
-    products: products,
+    products: [...products],
   };
 
   render() {
