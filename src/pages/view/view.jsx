@@ -14,7 +14,7 @@ export default class View extends Component {
           <SideBar onLogOut={onLogOut} onPageChange={onPageChange} />
         </div>
         <div className="main-wrapper">
-          <button className="backBtn" on>&lt; Back</button>
+          <button className="backBtn" onClick={()=>onPageChange("dashboard")}>&lt; Back</button>
           <div className="hero">
             <div className="hero-left">
               <ul className="img-list">

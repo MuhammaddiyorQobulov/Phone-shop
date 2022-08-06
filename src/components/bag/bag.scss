@@ -1,10 +1,10 @@
-
 .bag {
   width: 345px;
   display: flex;
   color: var(--dark);
   flex-direction: column;
   align-items: center;
+  background-color: var(--bg-primary);
   .bagTitle {
     font-family: sans-serif;
     margin: 00px 0 26px 0;
@@ -14,6 +14,7 @@
     grid-template-columns: auto auto auto;
     gap: 16px;
     justify-content: center;
+    background-color: var(--bg-primary);
     .card {
       width: 80px;
       height: 80px;
