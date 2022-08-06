@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import SideBar from "../../components/side-bar/side-bar";
-
 import "./dashboard.scss";
+import Products from "./products/products";
+import Bag from "../../components/bag/bag";
 export default class Dashboard extends Component {
   render() {
     return (
@@ -9,10 +10,13 @@ export default class Dashboard extends Component {
         <div className="left-sidebar">
           <SideBar />
         </div>
-        <div className="main-wrapper">Bu yerda products keladi</div>
-        <div className="right-sidebar">Bu yerda bag companenta keladi</div>
+        <div className="main-wrapper">
+          <Products />
+        </div>
+        <div className="right-sidebar">
+          <Bag />
+        </div>
       </div>
-      // Componentlar shu divlar icida yoziladi !!!!
     );
   }
 }

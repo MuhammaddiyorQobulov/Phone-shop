@@ -1,16 +1,22 @@
 import { Component } from "react";
+import BagItems from "./pages/bag-items/bag-items";
 import Dashboard from "./pages/dashboard/dashboard";
 import Login from "./pages/login/login";
-import Products from "./pages/dashboard/products/products";
+import products from "./products";
+
+
 class App extends Component {
-  state = {};
+  state = {
+    products: [...products],
+  };
 
   render() {
+    console.log(this.state);
     return (
       <div className="App">
-        <Products />
-        <Login />
         <Dashboard />
+        <Login/>
+        <BagItems/>
       </div>
     );
   }
