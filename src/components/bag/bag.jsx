@@ -2,10 +2,10 @@ import { Component } from "react";
 
 import "./bag.scss";
 
-import iphone11 from "../img/iphone11.png";
-import iphone111 from "../img/iphone11(2).png";
-import iphone13 from "../img/iphone13.png";
-import noutbook from "../img/noutbook.png";
+import iphone11 from "../../../src/assets/images/iphone-12-01.png";
+import iphone111 from "../../../src/assets/images/iphone-12-02.png";
+import iphone13 from "../../../src/assets/images/iphone-12-03.png";
+import noutbook from "../../../src/assets/images/iphone-12-04.png";
 
 const icon = (
   <svg
