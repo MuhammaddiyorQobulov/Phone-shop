@@ -54,7 +54,7 @@ export default class View extends Component {
         </div>
 
         <div className="right-sidebar">
-          <Bag />
+          <Bag onPageChange={onPageChange} />
         </div>
       </div>
       // Componentlar shu divlar ichida yoziladi !!!

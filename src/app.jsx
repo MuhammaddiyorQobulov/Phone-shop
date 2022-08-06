@@ -35,6 +35,7 @@ class App extends Component {
   handlePageChange = (newPage) => {
     localStorage.setItem(PAGE_KEY, JSON.stringify(newPage)); // save page
     this.setState({ page: newPage });
+    console.log("444555");
   };
 
   getPage = () => {

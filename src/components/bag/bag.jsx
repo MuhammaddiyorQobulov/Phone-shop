@@ -5,7 +5,7 @@ import { bagHandle } from "../../assets/icons";
 import products from "../../products";
 class Bag extends Component {
   render() {
-    const { product } = this.props;
+    const { product, onPageChange, btnTitle = "View Bag" } = this.props;
     return (
       <>
         <div className="bag">
@@ -19,7 +19,14 @@ class Bag extends Component {
           </div>
 
           <h1 className="money">Bag Total: 24543.32$</h1>
-          <button className="btnBag">{bagHandle} View Bag</button>
+          <button
+            onClick={() =>
+              onPageChange(btnTitle === "View Bag" ? "bag-items" : "checkout")
+            }
+            className="btnBag"
+          >
+            {bagHandle} {btnTitle}
+          </button>
         </div>
       </>
     );

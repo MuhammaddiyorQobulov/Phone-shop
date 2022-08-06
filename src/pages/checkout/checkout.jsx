@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Bag from "../../components/bag/bag";
+import Button from "../../components/button/button";
 import SideBar from "../../components/side-bar/side-bar";
 import products from "../../products";
 import "./checkout.scss";
@@ -24,10 +25,11 @@ class Checkout extends Component {
                   <li> Vermont, California</li>
                   <li>United States of America</li>
                 </ul>
-                <button>Change</button>
+                <Button title="Change" />
               </div>
             </div>
             <div className="shipping-info">
+              <h1>Review Bag</h1>
               {products.map((product, idx) => (
                 <div className="review-bag">
                   <div className="img-box">
