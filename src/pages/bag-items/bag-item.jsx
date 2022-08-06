@@ -1,10 +1,16 @@
 import React, { Component } from "react";
-import { star, starHalf } from "./../../assets/icons";
+import { star, starHalf, starOutline } from "./../../assets/icons";
 import "./bag-items.scss";
 
 class BagItem extends Component {
+  
+
+
   render() {
     const { product } = this.props;
+
+
+
     return (
       <div className="bag-item">
         <div className="bag-items-box">
@@ -18,13 +24,7 @@ class BagItem extends Component {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam
             </p>
             <div className="bag-items__starts-vs-rate">
-              <span className="bag-items__starts">
-                {star}
-                {star}
-                {star}
-                {star}
-                {starHalf}
-              </span>
+              <span className="bag-items__starts"></span>
               <span className="bag-items__rate">{product.rate}</span>
             </div>
             <div className="bag-items-box__description__price-part">
