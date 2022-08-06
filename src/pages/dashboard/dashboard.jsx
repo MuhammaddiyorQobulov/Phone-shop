@@ -15,7 +15,7 @@ export default class Dashboard extends Component {
           <Products onPageChange={onPageChange}/>
         </div>
         <div className="right-sidebar">
-          <Bag />
+          <Bag onPageChange={onPageChange}/>
         </div>
       </div>
     );

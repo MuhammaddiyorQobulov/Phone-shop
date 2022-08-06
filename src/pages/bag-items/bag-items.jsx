@@ -24,7 +24,7 @@ class BagItems extends Component {
           </div>
         </div>
         <div className="right-sidebar">
-          <Bag />
+          <Bag btnTitle="checkout" onPageChange={onPageChange} />
         </div>
       </div>
     );
