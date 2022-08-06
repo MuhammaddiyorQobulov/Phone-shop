@@ -1,5 +1,6 @@
-
 ._btn {
+    display: flex;
+    align-items: center;
     padding: 8px 24px;
     font-family: 'Cabin';
     font-style: normal;
@@ -9,10 +10,16 @@
     color: #FFFFFF;
     background: #1A1F16;
     border-radius: 14px;
+    gap: 8px;
+
+    &:hover {
+        background-color: #151713;
+        cursor: pointer;
+    }
 
     svg {
-        path{
-            fill:white
+        path {
+            fill: white
         }
     }
 }

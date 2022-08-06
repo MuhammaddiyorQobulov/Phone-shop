@@ -5,6 +5,7 @@ import Login from "./pages/login/login";
 import BagItems from "./pages/bag-items/bag-items";
 import View from "./pages/view/view";
 import products from "./products";
+import Checkout from "./pages/checkout/checkout";
 const USER_KEY = "user";
 const PAGE_KEY = "page";
 const REDIRECT_PAGE = "login";
@@ -52,6 +53,8 @@ class App extends Component {
         return <BagItems {...defaultProps} />;
       case "view":
         return <View {...defaultProps} />;
+      case "checkout":
+        return <Checkout {...defaultProps} />;
       default:
         return <Login onLogin={this.handleLogIn} />;
     }
