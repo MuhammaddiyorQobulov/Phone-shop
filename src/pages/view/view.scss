@@ -1,52 +1,55 @@
-.dashboard{
+.dashboard {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  background-color: #E5E5E5;
+  background-color: #e5e5e5;
 
-  .left-sidebar{
-
+  .left-sidebar {
   }
 
-  .main-wrapper{
-
-    .backBtn{
+  .main-wrapper {
+    .backBtn {
       font-size: 25px;
-      border:none;
+      border: 1px solid transparent;
       margin-bottom: 10px;
+
+      &:hover {
+        border: 1px solid black;
+        border-radius: 10px;
+      }
     }
 
-    .hero{
+    .hero {
       display: flex;
       align-items: flex-start;
       justify-content: center;
       gap: 30px;
       margin-bottom: 40px;
 
-      .hero-left{
+      .hero-left {
         display: flex;
         align-items: flex-start;
         gap: 30px;
 
-        .img-list{
+        .img-list {
           list-style-type: none;
           row-gap: 15px;
           margin-top: 0;
-          
-          .item{
+
+          .item {
             background-color: white;
             padding: 3px 1px;
             border-radius: 10px;
             margin-bottom: 30px;
-            
-            img{
+
+            img {
               width: 50px;
               height: 50px;
             }
           }
         }
 
-        .currentImg{
+        .currentImg {
           width: 200px;
           height: 280px;
           padding: 15px;
@@ -56,21 +59,20 @@
           align-items: center;
           justify-content: center;
 
-          img{
+          img {
             display: block;
           }
         }
       }
 
-      .hero-right{
-
-        .title{
+      .hero-right {
+        .title {
           font-size: 45px;
           font-weight: 700;
           margin-bottom: 10px;
         }
 
-        .model{
+        .model {
           font-size: 30px;
           line-height: 38px;
           font-weight: 400;
@@ -78,23 +80,21 @@
           margin-bottom: 15px;
         }
 
-        .rateStar{
-         
+        .rateStar {
           margin-bottom: 15px;
         }
 
-        .const{
+        .const {
           font-size: 25px;
           margin-bottom: 10px;
         }
 
-        .info{
+        .info {
           font-size: 18px;
           margin-bottom: 15px;
-
         }
 
-        .addBtn{
+        .addBtn {
           margin-left: auto;
           padding: 5px 10px;
           border-radius: 5px;
@@ -107,33 +107,31 @@
           justify-content: center;
           gap: 7px;
 
-          svg{
-            fill: white!important;
+          svg {
+            fill: white !important;
           }
-
         }
       }
     }
 
-    .horizontLine{
+    .horizontLine {
       display: block;
       width: 100%;
       height: 2px;
-      background-color: #60695C;
+      background-color: #60695c;
       margin-bottom: 40px;
     }
 
-    .description{
-
-      h3{
+    .description {
+      h3 {
         font-weight: 500;
         margin-bottom: 7px;
       }
-      p{
+      p {
         font-size: 18px;
         line-height: 24px;
         font-weight: 350;
-        color: #60695C;
+        color: #60695c;
       }
     }
   }

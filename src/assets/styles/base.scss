@@ -18,6 +18,7 @@ body {
   height: 100vh;
   display: grid;
   grid-template-columns: 130px auto 355px;
+  background-color: var(--bg-primary);
 
   .left-sidebar {
     background-color: var(--bg-primary);
@@ -30,6 +31,7 @@ body {
     overflow-y: scroll;
     scrollbar-gutter: stable;
     margin-right: 15px;
+    height: 100vh;
 
     &::-webkit-scrollbar {
       width: 4px;
@@ -45,6 +47,7 @@ body {
     width: 100%;
     background: var(--bg-primary);
     color: #fff;
+    overflow-x: scroll;
     margin: 50px 36px 50px 0;
     border-left: 4px solid rgba(26, 31, 22, 0.5);
   }
