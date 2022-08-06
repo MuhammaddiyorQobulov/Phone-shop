@@ -1,3 +1,4 @@
+
 ._btn {
     padding: 8px 24px;
     font-family: 'Cabin';
@@ -8,6 +9,10 @@
     color: #FFFFFF;
     background: #1A1F16;
     border-radius: 14px;
+    &:hover{
+        background-color: #110f0ff7;
+        cursor: pointer;
+    }
 }
 
 ._btn-small {
