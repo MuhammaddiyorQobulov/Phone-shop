@@ -3,14 +3,8 @@ import { star, starHalf, starOutline } from "./../../assets/icons";
 import "./bag-items.scss";
 
 class BagItem extends Component {
-  
-
-
   render() {
     const { product } = this.props;
-
-
-
     return (
       <div className="bag-item">
         <div className="bag-items-box">

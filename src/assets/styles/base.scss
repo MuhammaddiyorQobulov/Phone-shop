@@ -30,6 +30,7 @@ body {
     overflow-y: scroll;
     scrollbar-gutter: stable;
     margin-right: 15px;
+    height: calc(100vh - 50px);
 
     &::-webkit-scrollbar {
       width: 4px;
