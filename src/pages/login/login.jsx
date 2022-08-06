@@ -1,7 +1,9 @@
 import LoginInput from "./components/login-input";
 import "./login.scss";
 
-const Login = ({ onLogin }) => {
+const Login = ({ onLogin, value }) => {
+  console.log(value);
+  let newValue = value ? value : ["", "", "", "", ""];
   const inputs = [
     {
       id: 1,
@@ -9,6 +11,7 @@ const Login = ({ onLogin }) => {
       placeholder: "John Maker",
       label: "Shipping Name",
       required: true,
+      value: value ? value[0] : "",
     },
 
     {
@@ -17,6 +20,7 @@ const Login = ({ onLogin }) => {
       placeholder: "123 Plae Grond Stret",
       label: "Street Name",
       required: true,
+      value: value ? value[1] : "",
     },
     {
       id: 3,
@@ -24,6 +28,7 @@ const Login = ({ onLogin }) => {
       placeholder: "Vermont",
       label: "City",
       required: true,
+      value: value ? value[2] : "",
     },
     {
       id: 4,
@@ -31,6 +36,7 @@ const Login = ({ onLogin }) => {
       placeholder: "California",
       label: "State / Province",
       required: true,
+      value: value ? value[3] : "",
     },
     {
       id: 5,
@@ -38,6 +44,7 @@ const Login = ({ onLogin }) => {
       placeholder: "United States of America",
       label: "Country",
       required: true,
+      value: value ? value[4] : "",
     },
   ];
 
@@ -46,17 +53,26 @@ const Login = ({ onLogin }) => {
   };
 
   const onChange = (e) => {
-    console.log(e.target.value);
+    newValue[e.target.id - 1] = e.target.value;
   };
 
   return (
     <>
       <div className="login">
         <form onSubmit={handleSubmit}>
-          {inputs.map((input) => (
-            <LoginInput key={input.id} {...input} onChange={handleSubmit} />
+          {inputs.map(({ id, type, placeholder, label, required, value }) => (
+            <LoginInput
+              key={id}
+              id={id}
+              type={type}
+              placeholder={placeholder}
+              label={label}
+              required={required}
+              onChange={onChange}
+              value={value}
+            />
           ))}
-          <button className="login-btn" onClick={onLogin}>
+          <button onClick={() => onLogin(newValue)} className="login-btn">
             Login
           </button>
         </form>

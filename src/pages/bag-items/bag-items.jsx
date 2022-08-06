@@ -18,13 +18,16 @@ class BagItems extends Component {
             <div className="bag-items-boxes">
               <h1 className="bag-items__title">Check your Bag Items</h1>
               {products.map((product) => (
-                <BagItem key={product.id} product={product} />
+                <BagItem
+                  key={product.id}
+                  product={product}
+                />
               ))}
             </div>
           </div>
         </div>
         <div className="right-sidebar">
-          <Bag btnTitle="checkout" onPageChange={onPageChange} />
+          <Bag btnTitle="Checkout" onPageChange={onPageChange} />
         </div>
       </div>
     );

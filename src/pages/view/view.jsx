@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import SideBar from "../../components/side-bar/side-bar";
 import Bag from "../../components/bag/bag";
-import products from "../../products";
 import { bagAdd } from "../../assets/icons";
 import "./view.scss";
 import Button from "../../components/button/button";
 export default class View extends Component {
   render() {
-    const { onPageChange, onLogOut } = this.props;
+    const { onPageChange, onLogOut, viewProduct } = this.props;
+    console.log(viewProduct);
+    const { imgURL, name, model, rate, price, description } = viewProduct;
     return (
       <div className="dashboard">
         <div className="left-sidebar">
@@ -21,35 +22,32 @@ export default class View extends Component {
             <div className="hero-left">
               <ul className="img-list">
                 <li className="item">
-                  <img src={products[0].imgURL} alt="" />
+                  <img src={imgURL} alt="" />
                 </li>
                 <li className="item">
-                  <img src={products[0].imgURL} alt="" />
+                  <img src={imgURL} alt="" />
                 </li>
                 <li className="item">
-                  <img src={products[0].imgURL} alt="" />
+                  <img src={imgURL} alt="" />
                 </li>
               </ul>
               <div className="currentImg">
-                <img src={products[0].imgURL} alt="" />
+                <img src={imgURL} alt="" />
               </div>
             </div>
             <div className="hero-right">
-              <h2 className="title">{products[0].name}</h2>
-              <p className="model">{products[0].model}</p>
-              <div className="rateStar">{products[0].rate}</div>
-              <p className="const">$ {products[0].price}</p>
-              <p className="info">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa
-                asperiores assumenda aliquam, commodi ab necessitatibus.
-              </p>
+              <h2 className="title">{name}</h2>
+              <p className="model">{model}</p>
+              <div className="rateStar">{rate}</div>
+              <p className="const">$ {price}</p>
+              <p className="info">{description.substring(0, 250)}</p>
               <Button icon={bagAdd} title="Add to Bag" />
             </div>
           </div>
           <span className="horizontLine"></span>
           <div className="description">
             <h3>Description</h3>
-            <p>{products[0].description}</p>
+            <p>{description}</p>
           </div>
         </div>
 

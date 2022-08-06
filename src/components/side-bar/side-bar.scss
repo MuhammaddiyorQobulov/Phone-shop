@@ -15,19 +15,19 @@
     margin-top: auto;
   }
   .store-icon,
-  .logout-icon {
+  .logout-icon,
+  .bagHandle-icon {
     width: 40px;
     height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--white);
+    color: var(--dark);
     border-radius: 8px;
   }
-  .store-icon {
-    background-color: var(--dark);
-  }
+
   .logout-icon {
     background-color: var(--danger);
+    color: var(--white);
   }
 }

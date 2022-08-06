@@ -4,7 +4,7 @@ import Product from "./product";
 import "./products.scss";
 class Products extends Component {
   render() {
-    const { onPageChange } = this.props;
+    const { onPageChange} = this.props;
     return (
       <div className="products-section">
         <h1>Products</h1>

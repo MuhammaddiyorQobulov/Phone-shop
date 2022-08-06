@@ -9,6 +9,7 @@ import Checkout from "./pages/checkout/checkout";
 const USER_KEY = "user";
 const PAGE_KEY = "page";
 const REDIRECT_PAGE = "login";
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -18,44 +19,53 @@ class App extends Component {
       page: user ? page : REDIRECT_PAGE,
       user,
       products: products,
+      viewProduct: JSON.parse(localStorage.getItem("viewProduct")),
     };
   }
 
   handleLogOut = () => {
-    localStorage.removeItem(USER_KEY); // delete user
-    this.setState({ user: null, page: REDIRECT_PAGE });
+    localStorage.setItem(PAGE_KEY, JSON.stringify("login"));
+    this.setState({
+      user: JSON.parse(localStorage.getItem(USER_KEY)),
+      page: REDIRECT_PAGE,
+    });
   };
 
-  handleLogIn = () => {
-    localStorage.setItem(USER_KEY, true); // save user
+  handleLogIn = (value) => {
+    localStorage.setItem(USER_KEY, JSON.stringify(value));
     localStorage.setItem(PAGE_KEY, JSON.stringify("dashboard")); // save page
-    this.setState({ user: true, page: "dashboard" });
+    this.setState({ user: value, page: "dashboard" });
   };
 
-  handlePageChange = (newPage) => {
+  handlePageChange = (newPage, selectedProduct) => {
+    const viewProduct = this.state.products.filter(
+      ({ id }) => id == selectedProduct
+    );
+
     localStorage.setItem(PAGE_KEY, JSON.stringify(newPage)); // save page
-    this.setState({ page: newPage });
-    console.log("444555");
+    localStorage.setItem("viewProduct", JSON.stringify(viewProduct)); // save page
+    this.setState({ page: newPage, viewProduct });
   };
 
   getPage = () => {
-    const { products } = this.state;
+    const { products, user, page, viewProduct } = this.state;
     const defaultProps = {
       onPageChange: this.handlePageChange,
       onLogOut: this.handleLogOut,
     };
 
-    switch (this.state.page) {
+    switch (page) {
       case "login":
-        return <Login onLogin={this.handleLogIn} />;
+        return <Login onLogin={this.handleLogIn} value={user && user} />;
       case "dashboard":
         return <Dashboard {...defaultProps} products={products} />;
       case "bag-items":
         return <BagItems {...defaultProps} />;
+
       case "view":
-        return <View {...defaultProps} />;
+        return <View {...defaultProps} viewProduct={viewProduct[0]} />;
       case "checkout":
-        return <Checkout {...defaultProps} />;
+        return <Checkout {...defaultProps} user={user} />;
       default:
         return <Login onLogin={this.handleLogIn} />;
     }

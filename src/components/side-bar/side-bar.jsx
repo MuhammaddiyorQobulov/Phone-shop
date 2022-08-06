@@ -7,12 +7,31 @@ export default class SideBar extends Component {
     const { onLogOut, onPageChange } = this.props;
     return (
       <div className="side-bar">
-        <span className="store-icon" onClick={() => onPageChange("dashboard")}>
+        <span
+          className="store-icon"
+          style={
+            JSON.parse(localStorage.getItem("page")) == "dashboard"
+              ? {
+                  backgroundColor: "black",
+                  color: "white",
+                }
+              : {}
+          }
+          onClick={() => onPageChange("dashboard")}
+        >
           {storefront}
         </span>
         <span
           className="bagHandle-icon"
           onClick={() => onPageChange("bag-items")}
+          style={
+            JSON.parse(localStorage.getItem("page")) == "bag-items"
+              ? {
+                  backgroundColor: "black",
+                  color: "white",
+                }
+              : {}
+          }
         >
           {bagHandle}
         </span>
