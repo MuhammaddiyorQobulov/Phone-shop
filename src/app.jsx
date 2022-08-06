@@ -2,6 +2,8 @@ import { Component } from "react";
 import Dashboard from "./pages/dashboard/dashboard";
 import Login from "./pages/login/login";
 import BagItems from "./pages/bag-items/bag-items";
+import View from "./pages/view/view";
+import "./base.scss";
 
 class App extends Component {
   state = {};
@@ -9,9 +11,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <BagItems />
+        {/* <BagItems />
         <Login />
-        <Dashboard />
+        <Dashboard /> */}
+        <View/>
       </div>
     );
   }
