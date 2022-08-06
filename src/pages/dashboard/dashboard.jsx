@@ -12,7 +12,7 @@ export default class Dashboard extends Component {
           <SideBar onLogOut={onLogOut} onPageChange={onPageChange} />
         </div>
         <div className="main-wrapper">
-          <Products />
+          <Products onPageChange={onPageChange}/>
         </div>
         <div className="right-sidebar">
           <Bag />

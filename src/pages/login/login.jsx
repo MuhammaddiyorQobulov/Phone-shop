@@ -43,8 +43,12 @@ const Login = ({ onLogin }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+  };
+
+  const onChange = (e) => {
     console.log(e.target.value);
   };
+
   return (
     <>
       <div className="login">
