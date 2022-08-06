@@ -7,10 +7,11 @@ import "./bag-item.scss";
 
 class BagItems extends Component {
   render() {
+    const { onPageChange, onLogOut } = this.props;
     return (
       <div className="dashboard">
         <div className="left-sidebar">
-          <SideBar />
+          <SideBar onLogOut={onLogOut} onPageChange={onPageChange} />
         </div>
         <div className="main-wrapper">
           <div className="bag-items ">

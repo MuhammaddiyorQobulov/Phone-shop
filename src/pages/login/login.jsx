@@ -1,7 +1,7 @@
 import LoginInput from "./components/login-input";
 import "./login.scss";
 
-const Login = () => {
+const Login = ({ onLogin }) => {
   const inputs = [
     {
       id: 1,
@@ -43,20 +43,18 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-  };
-
-  const onChange = (e) => {
     console.log(e.target.value);
   };
-
   return (
     <>
       <div className="login">
         <form onSubmit={handleSubmit}>
           {inputs.map((input) => (
-            <LoginInput key={input.id} {...input} onChange={onChange} />
+            <LoginInput key={input.id} {...input} onChange={handleSubmit} />
           ))}
-          <button className="login-btn">Login</button>
+          <button className="login-btn" onClick={onLogin}>
+            Login
+          </button>
         </form>
       </div>
     </>
