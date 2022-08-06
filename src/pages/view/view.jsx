@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import SideBar from "../../components/side-bar/side-bar";
 import products from "../../products";
+<<<<<<< HEAD
 import { bagAdd } from "../../assets/icons";
+=======
+>>>>>>> 39c399f5a786e02d8f9f9177354a4c02b13106d0
 
 import "./view.scss";
 

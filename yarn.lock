@@ -1534,6 +1534,7 @@
     "rimraf" "^3.0.2"
 
 "@pmmmwh/react-refresh-webpack-plugin@^0.5.3":
+<<<<<<< HEAD
   "integrity" "sha512-bcKCAzF0DV2IIROp9ZHkRJa6O4jy7NlnHdWL3GmcUxYWNjLXkK5kfELELwEfSP5hXPfVL/qOGMAROuMQb9GG8Q=="
   "resolved" "https://registry.npmjs.org/@pmmmwh/react-refresh-webpack-plugin/-/react-refresh-webpack-plugin-0.5.7.tgz"
   "version" "0.5.7"
@@ -1547,6 +1548,37 @@
     "loader-utils" "^2.0.0"
     "schema-utils" "^3.0.0"
     "source-map" "^0.7.3"
+=======
+<<<<<<< HEAD
+  "integrity" "sha512-bcKCAzF0DV2IIROp9ZHkRJa6O4jy7NlnHdWL3GmcUxYWNjLXkK5kfELELwEfSP5hXPfVL/qOGMAROuMQb9GG8Q=="
+  "resolved" "https://registry.npmjs.org/@pmmmwh/react-refresh-webpack-plugin/-/react-refresh-webpack-plugin-0.5.7.tgz"
+  "version" "0.5.7"
+  dependencies:
+    "ansi-html-community" "^0.0.8"
+    "common-path-prefix" "^3.0.0"
+    "core-js-pure" "^3.8.1"
+    "error-stack-parser" "^2.0.6"
+    "find-up" "^5.0.0"
+    "html-entities" "^2.1.0"
+    "loader-utils" "^2.0.0"
+    "schema-utils" "^3.0.0"
+    "source-map" "^0.7.3"
+=======
+  version "0.5.7"
+  resolved "https://registry.npmjs.org/@pmmmwh/react-refresh-webpack-plugin/-/react-refresh-webpack-plugin-0.5.7.tgz"
+  integrity sha512-bcKCAzF0DV2IIROp9ZHkRJa6O4jy7NlnHdWL3GmcUxYWNjLXkK5kfELELwEfSP5hXPfVL/qOGMAROuMQb9GG8Q==
+  dependencies:
+    ansi-html-community "^0.0.8"
+    common-path-prefix "^3.0.0"
+    core-js-pure "^3.8.1"
+    error-stack-parser "^2.0.6"
+    find-up "^5.0.0"
+    html-entities "^2.1.0"
+    loader-utils "^2.0.0"
+    schema-utils "^3.0.0"
+    source-map "^0.7.3"
+>>>>>>> e7b74427fbb761d5d656a9b41d4996d234ac8242
+>>>>>>> 39c399f5a786e02d8f9f9177354a4c02b13106d0
 
 "@rollup/plugin-babel@^5.2.0":
   "integrity" "sha512-WFfdLWU/xVWKeRQnKmIAQULUI7Il0gZnBIH/ZFO069wYIfPu+8zrfp/KMW0atmELoRDq8FbiP3VCss9MhCut7Q=="

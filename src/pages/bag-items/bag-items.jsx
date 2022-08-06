@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Bag from "../../components/bag/bag";
 import SideBar from "../../components/side-bar/side-bar";
 import products from "./../../products";
 import BagItem from "./bag-item";
@@ -21,7 +22,9 @@ class BagItems extends Component {
             </div>
           </div>
         </div>
-        <div className="right-sidebar">Bu yerda bag companenta keladi</div>
+        <div className="right-sidebar">
+          <Bag />
+        </div>
       </div>
     );
   }
