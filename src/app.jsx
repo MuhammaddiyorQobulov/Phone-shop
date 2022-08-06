@@ -53,24 +53,15 @@ class App extends Component {
         return <BagItems {...defaultProps} />;
       case "view":
         return <View {...defaultProps} />;
+      case "checkout":
+        return <Checkout {...defaultProps} />;
       default:
         return <Login onLogin={this.handleLogIn} />;
     }
   };
 
   render() {
-    console.log("products = ", products);
-
-    console.log(this.state);
-    return (
-      <div className="App">
-        <Checkout/>
-        <BagItems />
-        <Login />
-        <Dashboard />
-      </div>
-    );
-    // return <div className="wrapper">{this.getPage()}</div>;
+    return <div className="wrapper">{this.getPage()}</div>;
   }
 }
 
