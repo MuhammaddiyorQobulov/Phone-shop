@@ -5,13 +5,10 @@ import Login from "./pages/login/login";
 import BagItems from "./pages/bag-items/bag-items";
 import View from "./pages/view/view";
 import products from "./products";
-<<<<<<< HEAD
 import Checkout from "./pages/checkout/checkout";
-=======
 const USER_KEY = "user";
 const PAGE_KEY = "page";
 const REDIRECT_PAGE = "login";
->>>>>>> b629a6ba0feb239aa79588c935146bbd815a270d
 class App extends Component {
   constructor(props) {
     super(props);
@@ -62,7 +59,6 @@ class App extends Component {
   };
 
   render() {
-<<<<<<< HEAD
     console.log("products = ", products);
 
     console.log(this.state);
@@ -74,9 +70,7 @@ class App extends Component {
         <Dashboard />
       </div>
     );
-=======
-    return <div className="wrapper">{this.getPage()}</div>;
->>>>>>> b629a6ba0feb239aa79588c935146bbd815a270d
+    // return <div className="wrapper">{this.getPage()}</div>;
   }
 }
 
