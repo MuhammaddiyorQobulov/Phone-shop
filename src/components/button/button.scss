@@ -9,9 +9,11 @@
     color: #FFFFFF;
     background: #1A1F16;
     border-radius: 14px;
-    &:hover{
-        background-color: #110f0ff7;
-        cursor: pointer;
+
+    svg {
+        path{
+            fill:white
+        }
     }
 }
 
