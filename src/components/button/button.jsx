@@ -1,14 +1,16 @@
-
 import React, { Component } from "react";
-import "./button.scss"
+import "./button.scss";
 
 class Button extends Component {
-    render() {
-        const { title = "btn-title", logo } = this.props;
-        return (
-            <button className="_btn">{logo} {title &&  title }</button>
-        );
-    }
+  render() {
+    const { title, icon } = this.props;
+    return (
+      <button className="_btn">
+        <span>{icon}</span>
+        <span>{title && title}</span>
+      </button>
+    );
+  }
 }
 
 export default Button;
