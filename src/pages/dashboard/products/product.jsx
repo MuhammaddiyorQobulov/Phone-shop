@@ -4,7 +4,7 @@ import { bagAdd } from "../../../assets/icons";
 import "./product.scss";
 class Product extends Component {
   render() {
-    const { onPageChange, inCrement, addToBag } = this.props;
+    const { onPageChange,  addToBag } = this.props;
     const { name, model, imgURL, price, id, countOfProduct } =
       this.props.product;
     return (

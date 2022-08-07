@@ -47,6 +47,22 @@
           background-color: red;
         }
       }
+
+      span{
+        position: absolute;
+        top: 83%;
+        left: 83%;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        background-color: #FDBD17;
+        color: white;
+
+      }
     }
   }
   .money {

@@ -6,6 +6,7 @@ import BagItems from "./pages/bag-items/bag-items";
 import View from "./pages/view/view";
 import products from "./products";
 import Checkout from "./pages/checkout/checkout";
+import { set } from "lodash";
 const USER_KEY = "user";
 const PAGE_KEY = "page";
 const REDIRECT_PAGE = "login";
@@ -39,7 +40,7 @@ class App extends Component {
 
   handlePageChange = (newPage, selectedProduct) => {
     const viewProduct = this.state.products.filter(
-      ({ id }) => id == selectedProduct
+      ({ id }) => id === selectedProduct
     );
 
     localStorage.setItem(PAGE_KEY, JSON.stringify(newPage)); // save page
@@ -52,13 +53,14 @@ class App extends Component {
     const bagProducts = products.filter(
       ({ countOfProduct }) => countOfProduct > 0
     );
+
     return bagProducts;
   };
 
   handleInCrement = (id, aggregade) => {
     const { products } = this.state;
     const newProducts = products.map((product) => {
-      if (product.id == id) {
+      if (product.id === id) {
         product.countOfProduct = product.countOfProduct + 1 * aggregade;
       }
       return product;
@@ -74,7 +76,7 @@ class App extends Component {
   };
 
   getPage = () => {
-    const { products, user, page, viewProduct } = this.state;
+    const { products, user, page, viewProduct, totalCount } = this.state;
     const defaultProps = {
       onPageChange: this.handlePageChange,
       onLogOut: this.handleLogOut,
@@ -90,7 +92,6 @@ class App extends Component {
             products={products}
             handleBagProducts={this.handleBagProducts()}
             addToBag={this.addToBag}
-            // inCrement={this.handleInCrement}
           />
         );
       case "bag-items":
@@ -130,6 +131,7 @@ class App extends Component {
   };
 
   render() {
+    console.log("state = ", this.state);
     return <div className="wrapper">{this.getPage()}</div>;
   }
 }

@@ -21,27 +21,8 @@
       display: flex;
       gap: 30px;
       font-size: 24px;
-      // margin-left: auto;
-      .stars {
-        margin-left: -40px;
-        display: flex;
-        .full {
-          path {
-            fill: #02d693;
-          }
-        }
-        .half {
-          color: red;
-          svg:nth-child(1) {
-            color: #02d693;
-          }
-        }
-        .empty {
-          svg {
-            color: #02d693;
-          }
-        }
-      }
+      margin-left: -40px;
+     
     }
   }
   &-box {

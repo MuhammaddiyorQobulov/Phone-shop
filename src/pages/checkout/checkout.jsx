@@ -1,42 +1,28 @@
 import React, { Component } from "react";
-import Bag from "../../components/bag/bag";
 import Button from "../../components/button/button";
 import SideBar from "../../components/side-bar/side-bar";
-import { star, starHalf, starOutline } from "./../../assets/icons";
+import Stars from "../../components/starts/star";
+
 import "./checkout.scss";
 
 class Checkout extends Component {
-  starts(rate) {
-    const full = new Array(parseInt(rate)).fill(1);
-    const half = (rate % 1) * 2;
-    const empty = new Array(parseInt(5 - rate)).fill(1);
-
-    return (
-      <div className="stars">
-        <div className="full">{full.map(() => star)}</div>
-        <div className="half">{half != 0 && starHalf}</div>
-        <div className="empty">{empty.map(() => starOutline)}</div>
-      </div>
+  totalCountValue = () => {
+    const { handleBagProducts } = this.props;
+    let count = 0;
+    this.props.products.map(
+      ({ price, countOfProduct }, idx) => (count += price * countOfProduct)
     );
-  }
+    return count;
+  };
+
   render() {
-    const {
-      onLogOut,
-      onPageChange,
-      user,
-      products,
-      inCrement,
-      handleBagProducts,
-    } = this.props;
+    const { onLogOut, onPageChange, user, products, inCrement } = this.props;
     return (
       <div className="dashboard">
         <div className="left-sidebar">
           <SideBar onLogOut={onLogOut} onPageChange={onPageChange} />
         </div>
         <div className="main-wrapper">
-          <button className="backBtn" onClick={() => onPageChange("bag-items ")}>
-            &lt; Back
-          </button>
           <div className="checkout">
             <h1 className="checkout-title">Checkout</h1>
             <div className="user-info">
@@ -68,7 +54,7 @@ class Checkout extends Component {
                       </p>
 
                       <div className="stars-part">
-                        {this.starts(rate)} {rate}/5
+                        <Stars rate={rate} /> {rate}/5
                       </div>
 
                       <div className="price">
@@ -99,10 +85,37 @@ class Checkout extends Component {
           </div>
         </div>
         <div className="right-sidebar">
-          <Bag products={handleBagProducts} />
+          <div className="total-wrapper">
+            <div className="totalCount">
+              <h2>Order Summary</h2>
+              <div className="items">
+                <p>Items:</p>
+                <p>$ {this.totalCountValue()}</p>
+              </div>
+              <div className="shipping">
+                <p>Shipping:</p>
+                <p>$ {Math.floor(this.totalCountValue() / 90)} </p>
+              </div>
+              <hr />
+              <div className="order-total">
+                <h2>Order Total:</h2>
+                <h2>
+                  ${" "}
+                  {this.totalCountValue() +
+                    Math.floor(this.totalCountValue() / 90)}{" "}
+                </h2>
+              </div>
+              <button>Place Your Orders</button>
+            </div>
+            <button
+              className="backBtn"
+              onClick={() => onPageChange("bag-items")}
+            >
+              &lt; Back
+            </button>
+          </div>
         </div>
       </div>
-      // Componentlar shu divlar ichida yoziladi !!!
     );
   }
 }
