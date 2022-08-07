@@ -14,10 +14,10 @@ body {
 }
 
 .dashboard {
-  width: 100%;
+  width: 99.8vw;
   height: 100vh;
   display: grid;
-  grid-template-columns: 130px auto 355px;
+  grid-template-columns: 130px auto 335px;
   background-color: var(--bg-primary);
 
   .left-sidebar {
@@ -33,7 +33,6 @@ body {
     margin-right: 15px;
     height: calc(100vh - 50px);
 
-
     &::-webkit-scrollbar {
       width: 4px;
     }
@@ -48,8 +47,7 @@ body {
     width: 100%;
     background: var(--bg-primary);
     color: #fff;
-    overflow-x: scroll;
-    margin: 50px 36px 50px 0;
+    margin: 50px 32px 50px 0;
     border-left: 4px solid rgba(26, 31, 22, 0.5);
   }
 }

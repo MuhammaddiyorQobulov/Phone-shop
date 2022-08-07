@@ -1,44 +1,52 @@
-
 ._btn {
-    padding: 8px 24px;
-    font-family: 'Cabin';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 24px;
-    color: #FFFFFF;
-    background: #1A1F16;
-    border-radius: 14px;
+  display: flex;
+  align-items: center;
+  padding: 8px 5px 8px 14px;
+  font-family: "Cabin";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: #ffffff;
+  background: #1a1f16;
+  border: none;
+  border-radius: 14px;
+  gap: 8px;
 
-    svg {
-        path{
-            fill:white
-        }
+  &:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
+
+  svg {
+    path {
+      fill: white;
     }
+  }
 }
 
 ._btn-small {
-    background: #1A1F16;
-    padding: 8px 24px;
-    font-family: 'Cabin';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    letter-spacing: -0.02em;
-    color: #FFFFFF;
-    border-radius: 14px;
+  background: #1a1f16;
+  padding: 8px 24px;
+  font-family: "Cabin";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  border-radius: 14px;
 }
 
 .outline_btn {
-    color: #1A1F16;
-    width: 45px;
-    height: 19px;
-    border-radius: 3px;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    letter-spacing: -0.02em;
-    border-radius: 14px;
+  color: #1a1f16;
+  width: 45px;
+  height: 19px;
+  border-radius: 3px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: -0.02em;
+  border-radius: 14px;
 }

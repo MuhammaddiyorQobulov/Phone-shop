@@ -2,24 +2,47 @@ import { Component } from "react";
 import "./bag.scss";
 
 import { bagHandle } from "../../assets/icons";
-import products from "../../products";
 class Bag extends Component {
   render() {
-    const { product } = this.props;
+    const {
+      onPageChange,
+      btnTitle = "View Bag",
+      products,
+      isEmpty = "Empty",
+      addToBag,
+    } = this.props;
     return (
       <>
         <div className="bag">
           <h1 className="bagTitle">Bag</h1>
+          {products.length == 0 && (
+            <h2
+              style={{
+                textAlign: "center",
+                color: "#e6d117",
+              }}
+            >
+              {isEmpty}
+            </h2>
+          )}
           <div className="cards">
             {products.map((product, idx) => (
               <div className="card" key={product.id}>
+                <p onClick={() => addToBag(product, 0)}>x</p>
                 <img src={product.imgURL} alt="" />
               </div>
             ))}
           </div>
 
           <h1 className="money">Bag Total: 24543.32$</h1>
-          <button className="btnBag">{bagHandle} View Bag</button>
+          <button
+            onClick={() =>
+              onPageChange(btnTitle === "View Bag" ? "bag-items" : "checkout")
+            }
+            className="btnBag"
+          >
+            {bagHandle} {btnTitle}
+          </button>
         </div>
       </>
     );

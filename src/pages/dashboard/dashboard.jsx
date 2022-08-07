@@ -5,17 +5,26 @@ import Products from "./products/products";
 import Bag from "../../components/bag/bag";
 export default class Dashboard extends Component {
   render() {
-    const { onLogOut, onPageChange ,products} = this.props;
+    const { onLogOut, onPageChange, addToBag, handleBagProducts, inCrement } =
+      this.props;
     return (
       <div className="dashboard">
         <div className="left-sidebar">
           <SideBar onLogOut={onLogOut} onPageChange={onPageChange} />
         </div>
         <div className="main-wrapper">
-          <Products onPageChange={onPageChange}/>
+          <Products
+            onPageChange={onPageChange}
+            inCrement={inCrement}
+            addToBag={addToBag}
+          />
         </div>
         <div className="right-sidebar">
-          <Bag />
+          <Bag
+            addToBag={addToBag}
+            products={handleBagProducts}
+            onPageChange={onPageChange}
+          />
         </div>
       </div>
     );
