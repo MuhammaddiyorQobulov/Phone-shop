@@ -1,7 +1,7 @@
 ._btn {
   display: flex;
   align-items: center;
-  padding: 8px 5px 8px 14px;
+  padding: 8px 15px 8px 14px;
   font-family: "Cabin";
   font-style: normal;
   font-weight: 500;
@@ -11,6 +11,7 @@
   background: #1a1f16;
   border: none;
   border-radius: 14px;
+  transition: all 0.2s ease-in-out;
   gap: 8px;
 
   &:hover {

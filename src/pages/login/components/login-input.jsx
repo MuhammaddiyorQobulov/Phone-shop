@@ -1,7 +1,7 @@
 import "./login-input.scss";
 
 const LoginInput = (props) => {
-  const { label, onChange, id, type, placeholder, required, value } = props;
+  const { label, onChange, id, type, placeholder, value, required } = props;
   return (
     <div className="login-input">
       <label>{label}</label>
@@ -10,7 +10,8 @@ const LoginInput = (props) => {
         type={type}
         placeholder={placeholder}
         label={label}
-        required={required}
+        // required={required}
+        required
         onChange={onChange}
         defaultValue={value}
       />

@@ -16,15 +16,31 @@
   }
   &__starts-vs-rate {
     display: flex;
-    align-items: center;
     gap: 36px;
     .bag-items__rate {
-      font-style: normal;
-      font-weight: 400;
-      font-size: 20px;
-      line-height: 24px;
-      letter-spacing: -0.02em;
-      color: #12805d;
+      display: flex;
+      gap: 30px;
+      font-size: 24px;
+      // margin-left: auto;
+      .stars {
+        display: flex;
+        .full {
+          path {
+            fill: #02d693;
+          }
+        }
+        .half {
+          color: red;
+          svg:nth-child(1) {
+            color: #02d693;
+          }
+        }
+        .empty {
+          svg {
+            color: #02d693;
+          }
+        }
+      }
     }
   }
   &-box {

@@ -18,7 +18,7 @@ class Button extends Component {
         onClick={title == "Change" ? onLogOut : null}
       >
         <span>{icon}</span>
-        <span>{title && title}</span>
+        {title && <span> {title}</span>}
       </button>
     );
   }

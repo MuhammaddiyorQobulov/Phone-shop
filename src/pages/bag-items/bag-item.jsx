@@ -3,6 +3,20 @@ import { star, starHalf, starOutline } from "./../../assets/icons";
 import "./bag-items.scss";
 
 class BagItem extends Component {
+  starts(rate) {
+    const full = new Array(parseInt(rate)).fill(1);
+    const half = (rate % 1) * 2;
+    const empty = new Array(parseInt(5 - rate)).fill(1);
+
+    return (
+      <div className="stars">
+        <div className="full">{full.map(() => star)}</div>
+        <div className="half">{half != 0 && starHalf}</div>
+        <div className="empty">{empty.map(() => starOutline)}</div>
+      </div>
+    );
+  }
+
   render() {
     const { product, inCrement } = this.props;
     return (
@@ -19,7 +33,11 @@ class BagItem extends Component {
             </p>
             <div className="bag-items__starts-vs-rate">
               <span className="bag-items__starts"></span>
-              <span className="bag-items__rate">{product.rate}</span>
+              <span className="bag-items__rate">
+                {/* dfffffffffffffffff */}
+                {this.starts(product.rate)} {product.rate}/5
+                {/* dfffffffffffffffff */}
+              </span>
             </div>
             <div className="bag-items-box__description__price-part">
               <div className="bag-items-box__price-box">

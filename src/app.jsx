@@ -101,7 +101,7 @@ class App extends Component {
             products={this.handleBagProducts()}
             inCrement={this.handleInCrement}
             handleBagProducts={this.handleBagProducts()}
-            isEmpty="Nothing You Select To Buy"
+            isEmpty="You Select Nothing To Buy"
           />
         );
 

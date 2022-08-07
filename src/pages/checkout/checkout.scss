@@ -56,6 +56,7 @@
         background: transparent;
         transition: all 0.2s ease-in-out;
         color: var(--dark);
+        border: 1px solid;
         &:hover {
           background-color: #1a1f16;
           color: white;
@@ -132,9 +133,32 @@
           margin: 0;
         }
 
-        .stars {
+        .stars-part {
           padding-top: 25.5px;
           width: 100%;
+
+          display: flex;
+          gap: 30px;
+          font-size: 24px;
+          .stars {
+            display: flex;
+            .full {
+              path {
+                fill: #02d693;
+              }
+            }
+            .half {
+              color: red;
+              svg:nth-child(1) {
+                color: #02d693;
+              }
+            }
+            .empty {
+              svg {
+                color: #02d693;
+              }
+            }
+          }
         }
 
         .price {

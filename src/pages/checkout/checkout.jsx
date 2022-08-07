@@ -2,9 +2,23 @@ import React, { Component } from "react";
 import Bag from "../../components/bag/bag";
 import Button from "../../components/button/button";
 import SideBar from "../../components/side-bar/side-bar";
+import { star, starHalf, starOutline } from "./../../assets/icons";
 import "./checkout.scss";
 
 class Checkout extends Component {
+  starts(rate) {
+    const full = new Array(parseInt(rate)).fill(1);
+    const half = (rate % 1) * 2;
+    const empty = new Array(parseInt(5 - rate)).fill(1);
+
+    return (
+      <div className="stars">
+        <div className="full">{full.map(() => star)}</div>
+        <div className="half">{half != 0 && starHalf}</div>
+        <div className="empty">{empty.map(() => starOutline)}</div>
+      </div>
+    );
+  }
   render() {
     const {
       onLogOut,
@@ -40,7 +54,7 @@ class Checkout extends Component {
             <div className="shipping-info">
               <h1>Review Bag</h1>
               {products.map(
-                ({ price, name, id, imgURL, countOfProduct }, idx) => (
+                ({ price, name, id, imgURL, countOfProduct, rate }, idx) => (
                   <div key={id} className="review-bag">
                     <div className="img-box">
                       <img src={imgURL} alt="" />
@@ -52,12 +66,15 @@ class Checkout extends Component {
                         Lorem ipsum dolor sit consectetur adipiscing elit ut
                         aliquam{" "}
                       </p>
-                      <div className="stars">
-                        &#11088; &#11088; &#11088; &#11088; &#11088;
+
+                      <div className="stars-part">
+                        {this.starts(rate)} {rate}/5
                       </div>
 
                       <div className="price">
-                        <span>$ {price} x 1</span>
+                        <span>
+                          $ {price} x {countOfProduct}
+                        </span>
                         <div className="counts">
                           <button
                             className="btn-red"

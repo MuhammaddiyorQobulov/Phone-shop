@@ -60,16 +60,16 @@ const Login = ({ onLogin, value }) => {
     <>
       <div className="login">
         <form onSubmit={handleSubmit}>
-          {inputs.map(({ id, type, placeholder, label, required, value }) => (
+          {inputs.map(({ id, type, placeholder, label, value, required }) => (
             <LoginInput
               key={id}
               id={id}
               type={type}
               placeholder={placeholder}
               label={label}
-              required={required}
               onChange={onChange}
               value={value}
+              required={required}
             />
           ))}
           <button onClick={() => onLogin(newValue)} className="login-btn">

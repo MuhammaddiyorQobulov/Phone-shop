@@ -1,5 +1,6 @@
 .bag {
   width: 335px;
+  height: 90vh;
   display: flex;
   color: var(--dark);
   flex-direction: column;
@@ -66,6 +67,7 @@
     border-radius: 14px;
     margin-top: 32px;
     border: none;
+    transition: all 0.2s ease-in-out;
     &:hover {
       opacity: 0.8;
       cursor: pointer;
