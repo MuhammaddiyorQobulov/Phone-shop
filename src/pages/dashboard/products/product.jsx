@@ -14,7 +14,7 @@ class Product extends Component {
         <p>{model}</p>
         <div className="price">
           <b>$ {price}</b>
-          <div onClick={() => addToBag(this.props.product)}>
+          <div onClick={() => addToBag(this.props.product, 1)}>
             <Button
               icon={bagAdd}
               disabled={countOfProduct >= 1 ? true : false}

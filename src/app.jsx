@@ -50,7 +50,7 @@ class App extends Component {
   handleBagProducts = () => {
     const { products } = this.state;
     const bagProducts = products.filter(
-      ({ countOfProduct }, idx) => countOfProduct > 0
+      ({ countOfProduct }) => countOfProduct > 0
     );
     return bagProducts;
   };
@@ -65,12 +65,12 @@ class App extends Component {
     });
     this.setState({ products: newProducts });
   };
-  addToBag = (product) => {
+  addToBag = (product, zero) => {
     const { products } = this.state;
     const selectedIdx = products.findIndex((t) => t === product);
     console.log(selectedIdx);
     console.log(products[selectedIdx]);
-    products[selectedIdx].countOfProduct = 1;
+    products[selectedIdx].countOfProduct = zero;
     this.setState({ products });
   };
 

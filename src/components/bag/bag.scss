@@ -16,17 +16,35 @@
     justify-content: center;
     background-color: var(--bg-primary);
     .card {
-      width: 80px;
-      height: 80px;
-      background-color: white;
       display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 12px;
-
+      flex-direction: row-reverse;
+      position: relative;
+      display: flex;
       img {
         width: 80px;
         height: 80px;
+        border-radius: 12px;
+        background-color: white;
+      }
+
+      p {
+        position: absolute;
+        left: 85%;
+        top: -25%;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        width: 15px;
+        height: 15px;
+        background-color: black;
+        color: white;
+        cursor: pointer;
+
+        &:hover {
+          background-color: red;
+        }
       }
     }
   }
@@ -47,6 +65,11 @@
     font-size: 20px;
     border-radius: 14px;
     margin-top: 32px;
+    border: none;
+    &:hover {
+      opacity: 0.8;
+      cursor: pointer;
+    }
 
     svg {
       path {

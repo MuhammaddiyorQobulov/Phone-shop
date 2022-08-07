@@ -9,6 +9,7 @@ class Bag extends Component {
       btnTitle = "View Bag",
       products,
       isEmpty = "Empty",
+      addToBag,
     } = this.props;
     return (
       <>
@@ -27,6 +28,7 @@ class Bag extends Component {
           <div className="cards">
             {products.map((product, idx) => (
               <div className="card" key={product.id}>
+                <p onClick={() => addToBag(product, 0)}>x</p>
                 <img src={product.imgURL} alt="" />
               </div>
             ))}

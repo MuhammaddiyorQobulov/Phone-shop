@@ -13,10 +13,18 @@ export default class Dashboard extends Component {
           <SideBar onLogOut={onLogOut} onPageChange={onPageChange} />
         </div>
         <div className="main-wrapper">
-          <Products onPageChange={onPageChange} inCrement={inCrement} addToBag={addToBag}/>
+          <Products
+            onPageChange={onPageChange}
+            inCrement={inCrement}
+            addToBag={addToBag}
+          />
         </div>
         <div className="right-sidebar">
-          <Bag products={handleBagProducts} onPageChange={onPageChange} />
+          <Bag
+            addToBag={addToBag}
+            products={handleBagProducts}
+            onPageChange={onPageChange}
+          />
         </div>
       </div>
     );

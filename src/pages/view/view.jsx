@@ -50,7 +50,7 @@ export default class View extends Component {
               <div className="rateStar">{rate}</div>
               <p className="const">$ {price}</p>
               <p className="info">{description.substring(0, 250)}</p>
-              <div onClick={() => addToBag(viewProduct)}>
+              <div onClick={() => addToBag(viewProduct, 1)}>
                 <Button
                   disabled={countOfProduct >= 1 ? true : false}
                   icon={bagAdd}
@@ -67,7 +67,11 @@ export default class View extends Component {
         </div>
 
         <div className="right-sidebar">
-          <Bag products={handleBagProducts} onPageChange={onPageChange} />
+          <Bag
+            addToBag={addToBag}
+            products={handleBagProducts}
+            onPageChange={onPageChange}
+          />
         </div>
       </div>
       // Componentlar shu divlar ichida yoziladi !!!
