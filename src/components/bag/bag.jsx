@@ -4,11 +4,26 @@ import "./bag.scss";
 import { bagHandle } from "../../assets/icons";
 class Bag extends Component {
   render() {
-    const { onPageChange, btnTitle = "View Bag", products } = this.props;
+    const {
+      onPageChange,
+      btnTitle = "View Bag",
+      products,
+      isEmpty = "Empty",
+    } = this.props;
     return (
       <>
         <div className="bag">
           <h1 className="bagTitle">Bag</h1>
+          {products.length == 0 && (
+            <h2
+              style={{
+                textAlign: "center",
+                color: "#e6d117",
+              }}
+            >
+              {isEmpty}
+            </h2>
+          )}
           <div className="cards">
             {products.map((product, idx) => (
               <div className="card" key={product.id}>

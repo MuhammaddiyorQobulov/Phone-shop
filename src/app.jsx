@@ -65,12 +65,14 @@ class App extends Component {
     });
     this.setState({ products: newProducts });
   };
-  // addToBag = (product) => {
-  //   const { products } = this.state;
-  //   const selectedIdx = products.findIndex((t) => t === product);
-  //   products[selectedIdx].countOfProduct = 1;
-  // this.setState({ products });
-  // };
+  addToBag = (product) => {
+    const { products } = this.state;
+    const selectedIdx = products.findIndex((t) => t === product);
+    console.log(selectedIdx);
+    console.log(products[selectedIdx]);
+    products[selectedIdx].countOfProduct = 1;
+    this.setState({ products });
+  };
 
   getPage = () => {
     const { products, user, page, viewProduct } = this.state;
@@ -88,6 +90,7 @@ class App extends Component {
             {...defaultProps}
             products={products}
             handleBagProducts={this.handleBagProducts()}
+            addToBag={this.addToBag}
             // inCrement={this.handleInCrement}
           />
         );
@@ -98,6 +101,7 @@ class App extends Component {
             products={this.handleBagProducts()}
             inCrement={this.handleInCrement}
             handleBagProducts={this.handleBagProducts()}
+            isEmpty="Nothing You Select To Buy"
           />
         );
 
@@ -107,6 +111,7 @@ class App extends Component {
             {...defaultProps}
             handleBagProducts={this.handleBagProducts()}
             viewProduct={viewProduct[0]}
+            addToBag={this.addToBag}
           />
         );
       case "checkout":

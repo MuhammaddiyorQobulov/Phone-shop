@@ -4,7 +4,7 @@ import Product from "./product";
 import "./products.scss";
 class Products extends Component {
   render() {
-    const { onPageChange, inCrement,addToBag } = this.props;
+    const { onPageChange, inCrement, addToBag } = this.props;
     return (
       <div className="products-section">
         <h1>Products</h1>
@@ -15,6 +15,7 @@ class Products extends Component {
               key={product.id}
               product={product}
               onPageChange={onPageChange}
+              addToBag={addToBag}
             />
           ))}
         </div>

@@ -6,9 +6,14 @@ import "./bag-item.scss";
 
 class BagItems extends Component {
   render() {
-    const { onPageChange, onLogOut, products, inCrement, handleBagProducts } =
-      this.props;
-    console.log(products);
+    const {
+      onPageChange,
+      onLogOut,
+      products,
+      inCrement,
+      handleBagProducts,
+      isEmpty,
+    } = this.props;
     return (
       <div className="dashboard">
         <div className="left-sidebar">
@@ -18,6 +23,16 @@ class BagItems extends Component {
           <div className="bag-items ">
             <div className="bag-items-boxes">
               <h1 className="bag-items__title">Check your Bag Items</h1>
+              {products.length == 0 && (
+                <h1
+                  style={{
+                    textAlign: "center",
+                    color: "#e6d117",
+                  }}
+                >
+                  {isEmpty}
+                </h1>
+              )}
               {products.map((product) => (
                 <BagItem
                   key={product.id}

@@ -6,9 +6,18 @@ import "./view.scss";
 import Button from "../../components/button/button";
 export default class View extends Component {
   render() {
-    const { onPageChange, onLogOut, viewProduct, handleBagProducts } =
+    const { onPageChange, onLogOut, viewProduct, handleBagProducts, addToBag } =
       this.props;
-    const { imgURL, name, model, rate, price, description } = viewProduct;
+    const {
+      imgURL,
+      name,
+      model,
+      rate,
+      price,
+      description,
+      id,
+      countOfProduct,
+    } = viewProduct;
     return (
       <div className="dashboard">
         <div className="left-sidebar">
@@ -41,7 +50,13 @@ export default class View extends Component {
               <div className="rateStar">{rate}</div>
               <p className="const">$ {price}</p>
               <p className="info">{description.substring(0, 250)}</p>
-              <Button icon={bagAdd} title="Add to Bag" />
+              <div onClick={() => addToBag(viewProduct)}>
+                <Button
+                  disabled={countOfProduct >= 1 ? true : false}
+                  icon={bagAdd}
+                  title="Add to Bag"
+                />
+              </div>
             </div>
           </div>
           <span className="horizontLine"></span>

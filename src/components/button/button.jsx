@@ -10,7 +10,7 @@ class Button extends Component {
         style={
           disabled
             ? {
-                background: "red",
+                opacity: "0.5",
               }
             : {}
         }

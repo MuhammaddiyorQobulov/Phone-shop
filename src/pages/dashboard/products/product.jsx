@@ -4,7 +4,7 @@ import { bagAdd } from "../../../assets/icons";
 import "./product.scss";
 class Product extends Component {
   render() {
-    const { onPageChange, inCrement } = this.props;
+    const { onPageChange, inCrement, addToBag } = this.props;
     const { name, model, imgURL, price, id, countOfProduct } =
       this.props.product;
     return (
@@ -14,11 +14,13 @@ class Product extends Component {
         <p>{model}</p>
         <div className="price">
           <b>$ {price}</b>
-          <Button
-            icon={bagAdd}
-            disabled={countOfProduct >= 1 ? true : false}
-            id={id}
-          />
+          <div onClick={() => addToBag(this.props.product)}>
+            <Button
+              icon={bagAdd}
+              disabled={countOfProduct >= 1 ? true : false}
+              id={id}
+            />
+          </div>
         </div>
       </div>
     );
