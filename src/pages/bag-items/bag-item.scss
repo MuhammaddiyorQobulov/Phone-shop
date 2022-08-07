@@ -91,9 +91,11 @@
         display: flex;
         gap: 27.5px;
         .bag-items-box__dec {
+          cursor: pointer;
           color: #e5252c;
         }
         .bag-items-box__inc {
+          cursor: pointer;
           color: #02d693;
         }
       }

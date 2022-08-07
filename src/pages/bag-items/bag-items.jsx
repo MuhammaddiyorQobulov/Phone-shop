@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import Bag from "../../components/bag/bag";
 import SideBar from "../../components/side-bar/side-bar";
-import products from "./../../products";
 import BagItem from "./bag-item";
 import "./bag-item.scss";
 
 class BagItems extends Component {
   render() {
-    const { onPageChange, onLogOut } = this.props;
+    const { onPageChange, onLogOut, products, inCrement, handleBagProducts } =
+      this.props;
+    console.log(products);
     return (
       <div className="dashboard">
         <div className="left-sidebar">
@@ -21,13 +22,18 @@ class BagItems extends Component {
                 <BagItem
                   key={product.id}
                   product={product}
+                  inCrement={inCrement}
                 />
               ))}
             </div>
           </div>
         </div>
         <div className="right-sidebar">
-          <Bag btnTitle="Checkout" onPageChange={onPageChange} />
+          <Bag
+            btnTitle="Checkout"
+            products={handleBagProducts}
+            onPageChange={onPageChange}
+          />
         </div>
       </div>
     );

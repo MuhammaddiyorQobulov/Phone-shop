@@ -4,7 +4,7 @@ import "./bag-items.scss";
 
 class BagItem extends Component {
   render() {
-    const { product } = this.props;
+    const { product, inCrement } = this.props;
     return (
       <div className="bag-item">
         <div className="bag-items-box">
@@ -25,14 +25,26 @@ class BagItem extends Component {
               <div className="bag-items-box__price-box">
                 <span className="bag-items-box__price">${product.price}</span>
                 <span>x</span>
-                <span className="bag-items-box__goods">0</span>
+                <span className="bag-items-box__goods">
+                  {product.countOfProduct}
+                </span>
               </div>
               <div className="bag-items-box__total-goods">
-                <span className="bag-items-box__dec">-</span>
+                <span
+                  className="bag-items-box__dec"
+                  onClick={() => inCrement(product.id, -1)}
+                >
+                  -
+                </span>
                 <span className="bag-items-box__count">
                   {product.countOfProduct}
                 </span>
-                <span className="bag-items-box__inc">+</span>
+                <span
+                  className="bag-items-box__inc"
+                  onClick={() => inCrement(product.id, 1)}
+                >
+                  +
+                </span>
               </div>
             </div>
           </div>

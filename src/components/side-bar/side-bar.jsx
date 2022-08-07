@@ -10,6 +10,7 @@ export default class SideBar extends Component {
         <span
           className="store-icon"
           style={
+            JSON.parse(localStorage.getItem("page")) == "view" ||
             JSON.parse(localStorage.getItem("page")) == "dashboard"
               ? {
                   backgroundColor: "black",
@@ -25,7 +26,8 @@ export default class SideBar extends Component {
           className="bagHandle-icon"
           onClick={() => onPageChange("bag-items")}
           style={
-            JSON.parse(localStorage.getItem("page")) == "bag-items"
+            JSON.parse(localStorage.getItem("page")) == "bag-items" ||
+            JSON.parse(localStorage.getItem("page")) == "checkout"
               ? {
                   backgroundColor: "black",
                   color: "white",

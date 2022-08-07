@@ -6,8 +6,8 @@ import "./view.scss";
 import Button from "../../components/button/button";
 export default class View extends Component {
   render() {
-    const { onPageChange, onLogOut, viewProduct } = this.props;
-    console.log(viewProduct);
+    const { onPageChange, onLogOut, viewProduct, handleBagProducts } =
+      this.props;
     const { imgURL, name, model, rate, price, description } = viewProduct;
     return (
       <div className="dashboard">
@@ -52,7 +52,7 @@ export default class View extends Component {
         </div>
 
         <div className="right-sidebar">
-          <Bag onPageChange={onPageChange} />
+          <Bag products={handleBagProducts} onPageChange={onPageChange} />
         </div>
       </div>
       // Componentlar shu divlar ichida yoziladi !!!

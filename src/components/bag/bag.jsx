@@ -2,10 +2,9 @@ import { Component } from "react";
 import "./bag.scss";
 
 import { bagHandle } from "../../assets/icons";
-import products from "../../products";
 class Bag extends Component {
   render() {
-    const { product, onPageChange, btnTitle = "View Bag" } = this.props;
+    const { onPageChange, btnTitle = "View Bag", products } = this.props;
     return (
       <>
         <div className="bag">

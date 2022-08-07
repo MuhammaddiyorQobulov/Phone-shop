@@ -47,6 +47,31 @@ class App extends Component {
     this.setState({ page: newPage, viewProduct });
   };
 
+  handleBagProducts = () => {
+    const { products } = this.state;
+    const bagProducts = products.filter(
+      ({ countOfProduct }, idx) => countOfProduct > 0
+    );
+    return bagProducts;
+  };
+
+  handleInCrement = (id, aggregade) => {
+    const { products } = this.state;
+    const newProducts = products.map((product) => {
+      if (product.id == id) {
+        product.countOfProduct = product.countOfProduct + 1 * aggregade;
+      }
+      return product;
+    });
+    this.setState({ products: newProducts });
+  };
+  // addToBag = (product) => {
+  //   const { products } = this.state;
+  //   const selectedIdx = products.findIndex((t) => t === product);
+  //   products[selectedIdx].countOfProduct = 1;
+  // this.setState({ products });
+  // };
+
   getPage = () => {
     const { products, user, page, viewProduct } = this.state;
     const defaultProps = {
@@ -58,14 +83,42 @@ class App extends Component {
       case "login":
         return <Login onLogin={this.handleLogIn} value={user && user} />;
       case "dashboard":
-        return <Dashboard {...defaultProps} products={products} />;
+        return (
+          <Dashboard
+            {...defaultProps}
+            products={products}
+            handleBagProducts={this.handleBagProducts()}
+            // inCrement={this.handleInCrement}
+          />
+        );
       case "bag-items":
-        return <BagItems {...defaultProps} />;
+        return (
+          <BagItems
+            {...defaultProps}
+            products={this.handleBagProducts()}
+            inCrement={this.handleInCrement}
+            handleBagProducts={this.handleBagProducts()}
+          />
+        );
 
       case "view":
-        return <View {...defaultProps} viewProduct={viewProduct[0]} />;
+        return (
+          <View
+            {...defaultProps}
+            handleBagProducts={this.handleBagProducts()}
+            viewProduct={viewProduct[0]}
+          />
+        );
       case "checkout":
-        return <Checkout {...defaultProps} user={user} />;
+        return (
+          <Checkout
+            {...defaultProps}
+            user={user}
+            products={this.handleBagProducts()}
+            inCrement={this.handleInCrement}
+            handleBagProducts={this.handleBagProducts()}
+          />
+        );
       default:
         return <Login onLogin={this.handleLogIn} />;
     }

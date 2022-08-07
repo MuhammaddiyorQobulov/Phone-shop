@@ -2,12 +2,18 @@ import React, { Component } from "react";
 import Bag from "../../components/bag/bag";
 import Button from "../../components/button/button";
 import SideBar from "../../components/side-bar/side-bar";
-import products from "../../products";
 import "./checkout.scss";
 
 class Checkout extends Component {
   render() {
-    const { onLogOut, onPageChange, user } = this.props;
+    const {
+      onLogOut,
+      onPageChange,
+      user,
+      products,
+      inCrement,
+      handleBagProducts,
+    } = this.props;
     return (
       <div className="dashboard">
         <div className="left-sidebar">
@@ -33,38 +39,50 @@ class Checkout extends Component {
             </div>
             <div className="shipping-info">
               <h1>Review Bag</h1>
-              {products.map(({ price, name, id, imgURL }, idx) => (
-                <div key={id} className="review-bag">
-                  <div className="img-box">
-                    <img src={imgURL} alt="" />
-                  </div>
-                  <div className="info">
-                    <h2>{name}</h2>
-                    <h5>White</h5>
-                    <p>
-                      Lorem ipsum dolor sit consectetur adipiscing elit ut
-                      aliquam{" "}
-                    </p>
-                    <div className="stars">
-                      &#11088; &#11088; &#11088; &#11088; &#11088;
+              {products.map(
+                ({ price, name, id, imgURL, countOfProduct }, idx) => (
+                  <div key={id} className="review-bag">
+                    <div className="img-box">
+                      <img src={imgURL} alt="" />
                     </div>
+                    <div className="info">
+                      <h2>{name}</h2>
+                      <h5>White</h5>
+                      <p>
+                        Lorem ipsum dolor sit consectetur adipiscing elit ut
+                        aliquam{" "}
+                      </p>
+                      <div className="stars">
+                        &#11088; &#11088; &#11088; &#11088; &#11088;
+                      </div>
 
-                    <div className="price">
-                      <span>$ {price} x 1</span>
-                      <div className="counts">
-                        <button className="btn-red">-</button>
-                        <span>1</span>
-                        <button className="btn-success">+</button>
+                      <div className="price">
+                        <span>$ {price} x 1</span>
+                        <div className="counts">
+                          <button
+                            className="btn-red"
+                            onClick={() => inCrement(id, -1)}
+                          >
+                            -
+                          </button>
+                          <span>{countOfProduct}</span>
+                          <button
+                            className="btn-success"
+                            onClick={() => inCrement(id, 1)}
+                          >
+                            +
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                )
+              )}
             </div>
           </div>
         </div>
         <div className="right-sidebar">
-          <Bag />
+          <Bag products={handleBagProducts} />
         </div>
       </div>
       // Componentlar shu divlar ichida yoziladi !!!
