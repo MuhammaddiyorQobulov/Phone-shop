@@ -10,9 +10,17 @@ class BagItem extends Component {
 
     return (
       <div className="stars">
-        <div className="full">{full.map(() => star)}</div>
-        <div className="half">{half != 0 && starHalf}</div>
-        <div className="empty">{empty.map(() => starOutline)}</div>
+        {full.map((item, idx) => (
+          <div className="full" key={idx}>
+            {star}
+          </div>
+        ))}
+        {half != 0 && <div className="half">{starHalf}</div>}
+        {empty.map((item, idx) => (
+          <div className="empty" key={idx}>
+            {starOutline}
+          </div>
+        ))}
       </div>
     );
   }
@@ -34,9 +42,7 @@ class BagItem extends Component {
             <div className="bag-items__starts-vs-rate">
               <span className="bag-items__starts"></span>
               <span className="bag-items__rate">
-                {/* dfffffffffffffffff */}
                 {this.starts(product.rate)} {product.rate}/5
-                {/* dfffffffffffffffff */}
               </span>
             </div>
             <div className="bag-items-box__description__price-part">

@@ -34,7 +34,7 @@ class Checkout extends Component {
           <SideBar onLogOut={onLogOut} onPageChange={onPageChange} />
         </div>
         <div className="main-wrapper">
-          <button className="backBtn" onClick={() => onPageChange("dashboard")}>
+          <button className="backBtn" onClick={() => onPageChange("bag-items ")}>
             &lt; Back
           </button>
           <div className="checkout">

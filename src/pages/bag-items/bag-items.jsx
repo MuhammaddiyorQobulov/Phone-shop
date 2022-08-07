@@ -13,6 +13,7 @@ class BagItems extends Component {
       inCrement,
       handleBagProducts,
       isEmpty,
+      addToBag,
     } = this.props;
     return (
       <div className="dashboard">
@@ -33,7 +34,7 @@ class BagItems extends Component {
                   {isEmpty}
                 </h1>
               )}
-              {products.map((product) => (
+              {products.map((product, idx) => (
                 <BagItem
                   key={product.id}
                   product={product}
@@ -48,6 +49,7 @@ class BagItems extends Component {
             btnTitle="Checkout"
             products={handleBagProducts}
             onPageChange={onPageChange}
+            addToBag={addToBag}
           />
         </div>
       </div>

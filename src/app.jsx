@@ -68,8 +68,7 @@ class App extends Component {
   addToBag = (product, zero) => {
     const { products } = this.state;
     const selectedIdx = products.findIndex((t) => t === product);
-    console.log(selectedIdx);
-    console.log(products[selectedIdx]);
+
     products[selectedIdx].countOfProduct = zero;
     this.setState({ products });
   };
@@ -102,6 +101,7 @@ class App extends Component {
             inCrement={this.handleInCrement}
             handleBagProducts={this.handleBagProducts()}
             isEmpty="You Select Nothing To Buy"
+            addToBag={this.addToBag}
           />
         );
 
@@ -130,7 +130,6 @@ class App extends Component {
   };
 
   render() {
-    console.log(this.state);
     return <div className="wrapper">{this.getPage()}</div>;
   }
 }

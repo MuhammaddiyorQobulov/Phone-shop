@@ -210,8 +210,8 @@ export const starOutline = (
     <path
       d="M22.5 8.75H14.4375L12 1.25L9.5625 8.75H1.5L8.0625 13.25L5.53125 20.75L12 16.0625L18.4688 20.75L15.9375 13.25L22.5 8.75Z"
       stroke="currentColor"
-      stroke-width="2"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinejoin="round"
     />
   </svg>
 );
