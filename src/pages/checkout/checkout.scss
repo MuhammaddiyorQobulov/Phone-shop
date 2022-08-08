@@ -56,8 +56,9 @@
         background: transparent;
         transition: all 0.2s ease-in-out;
         color: var(--dark);
+        border: 1px solid;
         &:hover {
-          background-color: #1a1f16;
+          background-color: black;
           color: white;
         }
       }
@@ -132,9 +133,12 @@
           margin: 0;
         }
 
-        .stars {
+        .stars-part {
           padding-top: 25.5px;
           width: 100%;
+          display: flex;
+          gap: 30px;
+          font-size: 24px;
         }
 
         .price {
@@ -183,6 +187,62 @@
           }
         }
       }
+    }
+  }
+}
+.total-wrapper {
+  height: 75vh;
+  .backBtn {
+    border: none;
+    font-size: 25px;
+    margin: 15% 0 0 60%;
+    padding: 5px 10px;
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 14px;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      background-color: var(--dark);
+      color: white;
+    }
+  }
+  .totalCount {
+    background-color: white;
+    width: 230px;
+    color: black;
+    margin: 90px 0 0 40px;
+    padding: 5px 20px;
+    border-radius: 8px;
+    hr {
+      border: none;
+      height: 1px;
+      background-color: #bfd1e5;
+    }
+    .items,
+    .shipping,
+    .order-total {
+      color: gray;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      line-height: 5px;
+      justify-content: space-between;
+    }
+
+    .order-total {
+      line-height: 20px;
+      color: red;
+    }
+
+    button {
+      margin: 10px 0 20px 20px;
+      padding: 10px 15px;
+      font-size: 19px;
+      border-radius: 14px;
+      border: none;
+      background-color: var(--dark);
+      color: var(--white);
     }
   }
 }

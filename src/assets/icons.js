@@ -202,14 +202,14 @@ export const star = (
 export const starOutline = (
   <svg
     width="24"
-    height="24"
-    viewBox="0 0 24 24"
+    height="22"
+    viewBox="0 0 24 22"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
-      d="M22.5 9.75H14.4375L12 2.25L9.5625 9.75H1.5L8.0625 14.25L5.53125 21.75L12 17.0625L18.4688 21.75L15.9375 14.25L22.5 9.75Z"
-      stroke="#1A1F16"
+      d="M22.5 8.75H14.4375L12 1.25L9.5625 8.75H1.5L8.0625 13.25L5.53125 20.75L12 16.0625L18.4688 20.75L15.9375 13.25L22.5 8.75Z"
+      stroke="currentColor"
       strokeWidth="2"
       strokeLinejoin="round"
     />
@@ -220,18 +220,18 @@ export const starHalf = (
     width="24"
     height="24"
     viewBox="0 0 24 24"
-    fill="currentColor"
+    fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
       d="M22.5 9.75H14.4375L12 2.25L9.5625 9.75H1.5L8.0625 14.25L5.53125 21.75L12 17.0625L18.4688 21.75L15.9375 14.25L22.5 9.75Z"
-      stroke="#1A1F16"
+      stroke="currentColor"
       strokeWidth="2"
       strokeLinejoin="round"
     />
     <path
       d="M12 2.25V17.0625L5.53125 21.75L8.0625 14.25L1.5 9.75H9.5625L12 2.25Z"
-      fill="#1A1F16"
+      fill="currentColor"
     />
   </svg>
 );

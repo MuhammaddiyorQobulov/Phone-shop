@@ -1,5 +1,6 @@
 .bag {
   width: 335px;
+  height: 90vh;
   display: flex;
   color: var(--dark);
   flex-direction: column;
@@ -46,6 +47,22 @@
           background-color: red;
         }
       }
+
+      span{
+        position: absolute;
+        top: 83%;
+        left: 83%;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        background-color: #FDBD17;
+        color: white;
+
+      }
     }
   }
   .money {
@@ -66,6 +83,7 @@
     border-radius: 14px;
     margin-top: 32px;
     border: none;
+    transition: all 0.2s ease-in-out;
     &:hover {
       opacity: 0.8;
       cursor: pointer;

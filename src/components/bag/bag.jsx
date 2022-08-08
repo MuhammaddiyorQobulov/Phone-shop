@@ -3,6 +3,14 @@ import "./bag.scss";
 
 import { bagHandle } from "../../assets/icons";
 class Bag extends Component {
+  totalCountValue = () => {
+    let count = 0;
+    this.props.products.map(
+      ({ price, countOfProduct }, idx) => (count += price * countOfProduct)
+    );
+    return count;
+  };
+
   render() {
     const {
       onPageChange,
@@ -29,12 +37,13 @@ class Bag extends Component {
             {products.map((product, idx) => (
               <div className="card" key={product.id}>
                 <p onClick={() => addToBag(product, 0)}>x</p>
+                <span>{product.countOfProduct}</span>
                 <img src={product.imgURL} alt="" />
               </div>
             ))}
           </div>
 
-          <h1 className="money">Bag Total: 24543.32$</h1>
+          <h1 className="money">Bag Total: {this.totalCountValue()}$</h1>
           <button
             onClick={() =>
               onPageChange(btnTitle === "View Bag" ? "bag-items" : "checkout")

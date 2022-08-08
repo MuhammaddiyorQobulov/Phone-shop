@@ -16,15 +16,13 @@
   }
   &__starts-vs-rate {
     display: flex;
-    align-items: center;
     gap: 36px;
     .bag-items__rate {
-      font-style: normal;
-      font-weight: 400;
-      font-size: 20px;
-      line-height: 24px;
-      letter-spacing: -0.02em;
-      color: #12805d;
+      display: flex;
+      gap: 30px;
+      font-size: 24px;
+      margin-left: -40px;
+     
     }
   }
   &-box {
