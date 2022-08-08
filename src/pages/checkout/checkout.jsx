@@ -105,7 +105,7 @@ class Checkout extends Component {
                     Math.floor(this.totalCountValue() / 90)}{" "}
                 </h2>
               </div>
-              <button onClick={alert("Thanks For Shopping")}>
+              <button onClick={() => alert("Thanks For Shopping")}>
                 Place Your Orders
               </button>
             </div>
