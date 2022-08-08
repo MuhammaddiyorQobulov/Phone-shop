@@ -68,7 +68,7 @@ const Login = ({ onLogin, value }) => {
               placeholder={placeholder}
               label={label}
               onChange={onChange}
-              defaultValue={value}
+              value={value}
               required={required}
             />
           ))}
