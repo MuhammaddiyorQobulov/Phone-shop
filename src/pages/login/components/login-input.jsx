@@ -12,7 +12,7 @@ const LoginInput = (props) => {
         label={label}
         required
         onChange={onChange}
-        value={value}
+        defaultValue={value}
       />
     </div>
   );
