@@ -30,6 +30,7 @@ class Checkout extends Component {
               <div className="user">
                 <ul>
                   <li>{user[0]}</li>
+                  <li>{user[1]}</li>
                   <li>{user[2]}</li>
                   <li>{user[3]}</li>
                   <li>{user[4]}</li>
@@ -100,7 +101,6 @@ class Checkout extends Component {
               <div className="order-total">
                 <h2>Order Total:</h2>
                 <h2>
-                  ${" "}
                   {this.totalCountValue() +
                     Math.floor(this.totalCountValue() / 90)}{" "}
                 </h2>

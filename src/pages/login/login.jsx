@@ -2,7 +2,6 @@ import LoginInput from "./components/login-input";
 import "./login.scss";
 
 const Login = ({ onLogin, value }) => {
-  console.log(value);
   let newValue = value ? value : ["", "", "", "", ""];
   const inputs = [
     {
@@ -11,7 +10,7 @@ const Login = ({ onLogin, value }) => {
       placeholder: "John Maker",
       label: "Shipping Name",
       required: true,
-      value: value ? value[0] : "",
+      value: value && value[0],
     },
 
     {
@@ -20,7 +19,7 @@ const Login = ({ onLogin, value }) => {
       placeholder: "123 Plae Grond Stret",
       label: "Street Name",
       required: true,
-      value: value ? value[1] : "",
+      value: value && value[1],
     },
     {
       id: 3,
@@ -28,7 +27,7 @@ const Login = ({ onLogin, value }) => {
       placeholder: "Vermont",
       label: "City",
       required: true,
-      value: value ? value[2] : "",
+      value: value && value[2],
     },
     {
       id: 4,
@@ -36,7 +35,7 @@ const Login = ({ onLogin, value }) => {
       placeholder: "California",
       label: "State / Province",
       required: true,
-      value: value ? value[3] : "",
+      value: value && value[3],
     },
     {
       id: 5,
@@ -44,7 +43,7 @@ const Login = ({ onLogin, value }) => {
       placeholder: "United States of America",
       label: "Country",
       required: true,
-      value: value ? value[4] : "",
+      value: value && value[4],
     },
   ];
 

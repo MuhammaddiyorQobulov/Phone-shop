@@ -10,10 +10,9 @@ const LoginInput = (props) => {
         type={type}
         placeholder={placeholder}
         label={label}
-        // required={required}
         required
         onChange={onChange}
-        defaultValue={value}
+        value={value}
       />
     </div>
   );
